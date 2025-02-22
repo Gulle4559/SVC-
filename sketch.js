@@ -43,7 +43,25 @@ function keyPressed() {
   }
 }
 
-
+function calculate() {
+    try {
+      input = eval(input).toString();
+    } catch (e) {
+      input = "Fejl";
+    }
+  }
+  
+  function displayInput() {
+    let x = 20;
+    for (let char of input) {
+      if (char >= '0' && char <= '9') {
+        image(images[parseInt(char)], x, 100, 40, 40);
+      } else {
+        text(char, x + 20, 120);
+      }
+      x += 50;
+    }
+  }
 
 
 
